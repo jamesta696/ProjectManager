@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import ProjectItem from "./projectItem";
 
 class Projects extends Component {
-    // deleteProject = project => {
-    //     // this.props.onDelete(id);
-    //     this.props.onDelete(project);
-    // };
-
     render() {
         const { onDelete } = this.props;
 

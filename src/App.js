@@ -42,7 +42,7 @@ class App extends Component {
 
     onHandleDeleteProject = project => {
         const projects = [...this.state.projects];
-        let index = projects.filter(p => p.id === project.id);
+        let index = projects.findIndex(p => p.id === project.id);
         projects.splice(index, 1);
         this.setState({ projects });
         console.log("Project Removed - ", project);
