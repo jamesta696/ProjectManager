@@ -40,11 +40,12 @@ class App extends Component {
         console.log("Project Added - ", project);
     };
 
-    onHandleDelete = id => {
+    onHandleDeleteProject = project => {
         const projects = [...this.state.projects];
-        let index = projects.findIndex(p => p.id === id);
+        let index = projects.filter(p => p.id === project.id);
         projects.splice(index, 1);
         this.setState({ projects });
+        console.log("Project Removed - ", project);
     };
 
     render() {
@@ -53,7 +54,7 @@ class App extends Component {
                 <AddProject addProject={this.onHandleAddProject} />
                 <Projects
                     projects={this.state.projects}
-                    onDelete={this.onHandleDelete}
+                    onDelete={this.onHandleDeleteProject}
                 />
             </div>
         );
