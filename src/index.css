@@ -16,3 +16,7 @@ code {
 .toggleVisible {
     display: none;
 }
+
+.table {
+    margin-bottom: 0 !important;
+}
