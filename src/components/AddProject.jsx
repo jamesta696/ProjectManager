@@ -1,5 +1,9 @@
 import React, { Component } from "react";
+import ProjectTitle from "./ProjectTitle";
+import CategoryOptions from "./CategoryOptions";
 import uuid from "uuid";
+import "bootstrap/dist/css/bootstrap.css";
+
 class AddProject extends Component {
     constructor() {
         super();
@@ -7,55 +11,47 @@ class AddProject extends Component {
             newProject: {}
         };
     }
-    static defaultProps = {
-        categories: ["Web Design", "Web Development", "Mobile Development"]
-    };
 
     onHandleSubmit = e => {
-        if (this.refs.title.value === "") {
+        this.projectTitle = document.querySelector(".form-control");
+        this.categorySelect = document.querySelector(".custom-select");
+
+        if (this.projectTitle.value === "") {
             alert("please enter title");
         } else {
             this.setState(
                 {
                     newProject: {
                         id: uuid.v4(),
-                        title: this.refs.title.value,
-                        category: this.refs.category.value
+                        title: this.projectTitle.value,
+                        category: this.categorySelect.value
                     }
                 },
                 () => {
-                    this.props.addProject(this.state.newProject);
+                    this.props.onAddProject(this.state.newProject);
                 }
             );
         }
         e.preventDefault();
-        return (this.refs.title.value = "");
+        return (this.projectTitle.value = "");
     };
 
     render() {
-        let categoryOptions = this.props.categories.map(category => {
-            return (
-                <option key={category} value={category}>
-                    {category}
-                </option>
-            );
-        });
         return (
-            <div>
-                <h3>Add Project</h3>
+            <div style={{ marginLeft: "20px" }}>
+                <h4 className="display-4" style={{ fontSize: "40px" }}>
+                    Add New Projects:
+                </h4>
+                <br />
                 <form onSubmit={this.onHandleSubmit}>
-                    <div>
-                        <label>Title</label>
-                        <br />
-                        <input type="text" ref="title" />
-                    </div>
-                    <div>
-                        <label>Category</label>
-                        <br />
-                        <select ref="category">{categoryOptions}</select>
-                    </div>
+                    <ProjectTitle />
+                    <CategoryOptions />
                     <br />
-                    <input type="submit" value="Submit" />
+                    <input
+                        className="btn btn-primary"
+                        type="submit"
+                        value="Submit"
+                    />
                 </form>
             </div>
         );

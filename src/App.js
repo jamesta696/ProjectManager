@@ -49,11 +49,12 @@ class App extends Component {
     };
 
     render() {
+        const { projects } = this.state;
         return (
             <div className="App">
-                <AddProject addProject={this.onHandleAddProject} />
+                <AddProject onAddProject={this.onHandleAddProject} />
                 <Projects
-                    projects={this.state.projects}
+                    projects={projects}
                     onDelete={this.onHandleDeleteProject}
                 />
             </div>
