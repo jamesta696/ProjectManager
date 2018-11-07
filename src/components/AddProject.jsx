@@ -3,6 +3,7 @@ import ProjectTitle from "./ProjectTitle";
 import CategoryOptions from "./CategoryOptions";
 import uuid from "uuid";
 import "bootstrap/dist/css/bootstrap.css";
+import PropTypes from "prop-types";
 
 class AddProject extends Component {
     constructor() {
@@ -39,10 +40,10 @@ class AddProject extends Component {
     render() {
         return (
             <div style={{ marginLeft: "20px" }}>
-                <h4 className="display-4" style={{ fontSize: "40px" }}>
+                <h4 className="display-4" style={{ fontSize: "35px" }}>
                     Add New Projects:
                 </h4>
-                <br />
+
                 <form onSubmit={this.onHandleSubmit}>
                     <ProjectTitle />
                     <CategoryOptions />
@@ -57,5 +58,9 @@ class AddProject extends Component {
         );
     }
 }
+
+AddProject.propTypes = {
+    onAddProject: PropTypes.func
+};
 
 export default AddProject;

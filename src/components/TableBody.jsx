@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import PropTypes from "prop-types";
 
 class TableBody extends Component {
     render() {
@@ -25,5 +26,10 @@ class TableBody extends Component {
         );
     }
 }
+
+TableBody.propTypes = {
+    project: PropTypes.object,
+    onDelete: PropTypes.func
+};
 
 export default TableBody;

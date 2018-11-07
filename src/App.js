@@ -11,7 +11,7 @@ class App extends Component {
         };
     }
 
-    componentDidMount() {
+    getProjects() {
         this.setState({
             projects: [
                 {
@@ -33,6 +33,11 @@ class App extends Component {
         });
     }
 
+    componentDidMount() {
+        this.getProjects();
+        // Ajax Calls
+    }
+
     onHandleAddProject = project => {
         const projects = [...this.state.projects];
         projects.push(project);
@@ -41,7 +46,7 @@ class App extends Component {
     };
 
     onHandleDeleteProject = project => {
-        const projects = [...this.state.projects];
+        let projects = [...this.state.projects];
         let index = projects.findIndex(p => p.id === project.id);
         projects.splice(index, 1);
         this.setState({ projects });

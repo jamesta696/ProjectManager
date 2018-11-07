@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TableBody from "./TableBody";
 import "bootstrap/dist/css/bootstrap.css";
+import PropTypes from "prop-types";
 
 class Projects extends Component {
     render() {
@@ -29,5 +30,10 @@ class Projects extends Component {
         );
     }
 }
+
+Projects.propTypes = {
+    projects: PropTypes.array,
+    onDelete: PropTypes.func
+};
 
 export default Projects;
