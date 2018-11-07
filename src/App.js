@@ -35,6 +35,7 @@ class App extends Component {
 
     componentDidMount() {
         this.getProjects();
+        this.tableContainer = document.querySelector(".table");
         // Ajax Calls
     }
 
@@ -43,6 +44,9 @@ class App extends Component {
         projects.push(project);
         this.setState({ projects });
         console.log("Project Added - ", project);
+        if (projects.length > 0) {
+            this.tableContainer.classList.remove("toggleVisible");
+        }
     };
 
     onHandleDeleteProject = project => {
@@ -51,6 +55,9 @@ class App extends Component {
         projects.splice(index, 1);
         this.setState({ projects });
         console.log("Project Removed - ", project);
+        if (projects.length === 0) {
+            this.tableContainer.classList.add("toggleVisible");
+        }
     };
 
     render() {
