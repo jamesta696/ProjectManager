@@ -43,7 +43,6 @@ class AddProject extends Component {
                 <h4 className="display-4" style={{ fontSize: "35px" }}>
                     Add New Projects:
                 </h4>
-
                 <form onSubmit={this.onHandleSubmit}>
                     <ProjectTitle />
                     <CategoryOptions />

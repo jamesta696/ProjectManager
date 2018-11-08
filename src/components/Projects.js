@@ -29,7 +29,7 @@ class Projects extends Component {
                 <footer className="footer">
                     <div className="container">
                         <span className="text-muted">
-                            © 2018 Copyright: Built With ReactJS/JavaScript
+                            © 2018 Copyright: Built With ReactJS
                         </span>
                     </div>
                 </footer>
