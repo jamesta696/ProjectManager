@@ -26,6 +26,13 @@ class Projects extends Component {
                         />
                     </table>
                 </div>
+                <footer className="footer">
+                    <div className="container">
+                        <span className="text-muted">
+                            © 2018 Copyright: Built With ReactJS/JavaScript
+                        </span>
+                    </div>
+                </footer>
             </div>
         );
     }

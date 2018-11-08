@@ -8,9 +8,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
+.App {
+    background-color: honeydew;
 }
 
 .toggleVisible {
@@ -19,4 +18,23 @@ code {
 
 .table {
     margin-bottom: 0 !important;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: currentColor;
+}
+
+.footer .text-muted {
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 11px;
+}
+
+.footer .container {
+    text-align: center;
 }
